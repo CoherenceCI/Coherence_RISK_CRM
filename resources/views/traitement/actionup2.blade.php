@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                         @else
-                            <form class="nk-block" method="post" action="{{ route('index_risque_actionup2_traitement') }}" enctype="multipart/form-data">
+                            <form id="form" class="nk-block" method="post" action="{{ route('index_risque_actionup2_traitement') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row g-gs">
 
@@ -1068,6 +1068,19 @@
         }
     });
 </script>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+            $('.modal').modal('hide');
+            $(`#modalt`).modal('hide');
+            $(`#modalt`).modal('show');
+
+            // Si toutes les validations passent, soumettre le formulaire
+            this.submit();
+        });
+    </script>
 
 @endsection
 

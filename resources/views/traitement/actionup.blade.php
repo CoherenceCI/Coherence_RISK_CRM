@@ -188,7 +188,7 @@
                                 </div>
                             </div>
                             <div class="nk-modal-action">
-                                <a href="/risque_delete/{{ $risque->id }}" class="btn btn-lg btn-mw btn-success me-2">
+                                <a id="form_click" href="/risque_delete/{{ $risque->id }}" class="btn btn-lg btn-mw btn-success me-2">
                                     oui
                                 </a>
                                 <a href="#" class="btn btn-lg btn-mw btn-danger"data-bs-dismiss="modal">
@@ -230,6 +230,16 @@
             </div>
         </div>
     @endforeach
+
+    <script>
+        document.getElementById("form_click").addEventListener("click", function(event) {
+
+            $('.modal').modal('hide');
+            $(`#modalt`).modal('hide');
+            $(`#modalt`).modal('show');
+
+        });
+    </script>
 
     <script>
         Pusher.logToConsole = true;

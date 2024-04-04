@@ -590,7 +590,7 @@
                                 </div>
                             </div>
                             <div class="nk-modal-action">
-                                <a href="/risque valider/{{ $risque->id }}" class="btn btn-lg btn-mw btn-success me-2">
+                                <a id="form_click" href="/risque valider/{{ $risque->id }}" class="btn btn-lg btn-mw btn-success me-2">
                                     oui
                                 </a>
                                 <a href="#" class="btn btn-lg btn-mw btn-danger"data-bs-dismiss="modal">
@@ -613,7 +613,7 @@
                             aria-label="Close"><em class="icon ni ni-cross"></em></a>
                     </div>
                     <div class="modal-body">
-                        <form action="{{route('risque_rejet')}}" method="post" >
+                        <form id="form" action="{{route('risque_rejet')}}" method="post" >
                             @csrf
                             <div class="form-group">
                                 <label class="form-label" for="pay-amount">Motif</label>
@@ -633,6 +633,28 @@
             </div>
         </div>
     @endforeach
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+            $('.modal').modal('hide');
+            $(`#modalt`).modal('hide');
+            $(`#modalt`).modal('show');
+
+            // Si toutes les validations passent, soumettre le formulaire
+            this.submit();
+        });
+    </script>
+    <script>
+        document.getElementById("form_click").addEventListener("click", function(event) {
+
+            $('.modal').modal('hide');
+            $(`#modalt`).modal('hide');
+            $(`#modalt`).modal('show');
+
+        });
+    </script>
 
     <script>
         Pusher.logToConsole = true;

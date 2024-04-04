@@ -506,7 +506,24 @@
         </div>
     </div>
 
-        <!--<div class="modal fade" tabindex="-1" id="modalAlert2" aria-modal="true" style="position: fixed;" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade" tabindex="-1" id="modalt" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body modal-body-lg text-center">
+                <div class="nk-modal">
+                    <h5 class="nk-modal-title">Traitement en cours</h5>
+                    <div class="nk-modal-text">
+                        <div class="text-center">
+                            <div class="spinner-border text-warning" role="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        /*--<div class="modal fade" tabindex="-1" id="modalAlert2" aria-modal="true" style="position: fixed;" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body modal-body-lg text-center">
@@ -543,7 +560,7 @@
                 event.preventDefault(); // Pour éviter le comportement par défaut du lien
                 window.location.reload();
             });
-        </script>-->
+        </script>--*/
 
         <div class="modal fade zoom" tabindex="-1" id="modalPoste">
             <div class="modal-dialog modal-lg" role="document" style="width: 100%;">

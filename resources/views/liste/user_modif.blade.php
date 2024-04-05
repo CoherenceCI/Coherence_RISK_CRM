@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                     <div class="nk-block">
-                        <form class="nk-block" method="post" action="{{ route('index_modif_auto') }}">
+                        <form id="form" class="nk-block" method="post" action="{{ route('index_modif_auto') }}">
                             @csrf
                             <div class="row g-gs">
                                 <div class="col-lg-12">

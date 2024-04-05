@@ -322,7 +322,7 @@
                                 </div>
                             </div>
                             <div class="nk-modal-action">
-                                <a href="/am_valider/{{ $am->id }}" class="btn btn-lg btn-mw btn-success me-2">
+                                <a id="form_click" href="/am_valider/{{ $am->id }}" class="btn btn-lg btn-mw btn-success me-2">
                                     oui
                                 </a>
                                 <a href="#" class="btn btn-lg btn-mw btn-danger"data-bs-dismiss="modal">
@@ -345,7 +345,7 @@
                             aria-label="Close"><em class="icon ni ni-cross"></em></a>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('am_rejet') }}" method="post" >
+                        <form id="form" action="{{ route('am_rejet') }}" method="post" >
                             @csrf
                             <div class="form-group">
                                 <label class="form-label" for="pay-amount">Motif</label>

@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                         @else
-                            <form class="nk-block" method="post" action="{{ route('amup2_add_traitement') }}">
+                            <form id="form" class="nk-block" method="post" action="{{ route('amup2_add_traitement') }}">
                                 @csrf
                                 <div class="row g-gs">
                                     <input type="text" name="amelioration_id" value="{{ $am_id }}" style="display: none;">

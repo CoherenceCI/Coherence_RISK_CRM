@@ -96,4 +96,16 @@ class PosteController extends Controller
                 ->with('success', 'Mise à jour éffectuée.');
         }
     }
+
+    public function poste_delete($id)
+    {
+        $delete1 = poste::where('id', '=', $id)->delete();
+
+        if($delete1)
+        {
+            return redirect()->back()->with('success', 'Suppression éffectuée.');
+        }
+
+        return redirect()->back()->with('error', 'Echec de la Suppression.');
+    }
 }

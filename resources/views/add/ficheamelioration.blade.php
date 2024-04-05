@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                         @else
-                            <form class="nk-block" method="post" action="{{ route('index_add') }}">
+                            <form id="form" class="nk-block" method="post" action="{{ route('index_add') }}">
                                 @csrf
                                 <div class="row g-gs">
 

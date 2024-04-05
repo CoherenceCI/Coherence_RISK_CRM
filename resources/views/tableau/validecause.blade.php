@@ -635,28 +635,6 @@
     @endforeach
 
     <script>
-        document.getElementById("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Empêche la soumission par défaut du formulaire
-
-            $('.modal').modal('hide');
-            $(`#modalt`).modal('hide');
-            $(`#modalt`).modal('show');
-
-            // Si toutes les validations passent, soumettre le formulaire
-            this.submit();
-        });
-    </script>
-    <script>
-        document.getElementById("form_click").addEventListener("click", function(event) {
-
-            $('.modal').modal('hide');
-            $(`#modalt`).modal('hide');
-            $(`#modalt`).modal('show');
-
-        });
-    </script>
-
-    <script>
         Pusher.logToConsole = true;
 
         var pusher = new Pusher('9f9514edd43b1637ff61', {

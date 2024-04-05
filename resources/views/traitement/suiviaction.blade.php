@@ -84,7 +84,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="nk-block">
-                            <form class="row g-gs" method="post" action="/Suivi_action/{{ $action->id }}">
+                            <form id="form" class="row g-gs" method="post" action="/Suivi_action/{{ $action->id }}">
                                 @csrf
                                 <div class="col-lg-12 col-xxl-12" >
                                     <div class="card">

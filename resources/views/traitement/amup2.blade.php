@@ -36,7 +36,7 @@
                                     </div>
                     </div>
                 </div>
-                <form class="nk-block" method="post" action="{{ route('amup2_traitement') }}">
+                <form id="form" class="nk-block" method="post" action="{{ route('amup2_traitement') }}">
                     @csrf
                     <input type="text" value="{{ $am->id }}" name="amelioration_id" style="display: none;" >
                     <div class="row g-gs">

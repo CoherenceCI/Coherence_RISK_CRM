@@ -232,16 +232,6 @@
     @endforeach
 
     <script>
-        document.getElementById("form_click").addEventListener("click", function(event) {
-
-            $('.modal').modal('hide');
-            $(`#modalt`).modal('hide');
-            $(`#modalt`).modal('show');
-
-        });
-    </script>
-
-    <script>
         Pusher.logToConsole = true;
 
         var pusher = new Pusher('9f9514edd43b1637ff61', {

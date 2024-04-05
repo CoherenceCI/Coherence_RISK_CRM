@@ -59,11 +59,20 @@
                                                         </td>
                                                         <td>{{ \Carbon\Carbon::parse($poste->created_at)->translatedFormat('j F Y '.' à '.' h:i:s') }}</td>
                                                         <td>
-                                                            <a data-bs-toggle="modal"
-                                                                data-bs-target="#modalModif{{ $poste->id }}"
-                                                                href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-info">
-                                                                <em class="icon ni ni-edit"></em>
-                                                            </a>
+                                                            <div class="d-flex" >
+                                                                <a data-bs-toggle="modal"
+                                                                    data-bs-target="#modalModif{{ $poste->id }}"
+                                                                    href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-info">
+                                                                    <em class="icon ni ni-edit"></em>
+                                                                </a>
+                                                                @if($poste->occupe === 'non')
+                                                                    <a data-bs-toggle="modal"
+                                                                        data-bs-target="#modalDelete{{ $poste->id }}"
+                                                                        href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-danger">
+                                                                        <em class="icon ni ni-trash"></em>
+                                                                    </a>
+                                                                @endif
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -88,9 +97,9 @@
                         <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close"><em class="icon ni ni-cross"></em></a>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="{{ route('index_modif_poste_traitement') }}">
+                        <form id="form" method="post" action="{{ route('index_modif_poste_traitement') }}">
                             @csrf
-                            <div class="row g-4 mb-4" id="poste-container">
+                            <div class="row g-4 mb-4">
                                 <div class="col-lg-12">
                                     <div class="form-group text-center">
                                         <label class="form-label" for="poste">
@@ -114,6 +123,35 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    @foreach($postes as $key => $poste)
+        <div class="modal fade" tabindex="-1" id="modalDelete{{ $poste->id  }}" aria-modal="true" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"><a href="#" class="close" data-bs-dismiss="modal"><em
+                            class="icon ni ni-cross"></em></a>
+                    <div class="modal-body modal-body-lg text-center">
+                        <div class="nk-modal">
+                            <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-trash bg-danger"></em>
+                            <h4 class="nk-modal-title">Confirmation</h4>
+                            <div class="nk-modal-text">
+                                <div class="caption-text">
+                                    <span> Voulez-vous vraiment supprimer ce Poste ?</span>
+                                </div>
+                            </div>
+                            <div class="nk-modal-action">
+                                <a id="form_click" href="/poste_delete/{{ $poste->id }}" class="btn btn-lg btn-mw btn-success me-2">
+                                    oui
+                                </a>
+                                <a href="#" class="btn btn-lg btn-mw btn-danger"data-bs-dismiss="modal">
+                                    non
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

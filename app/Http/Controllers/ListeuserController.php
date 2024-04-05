@@ -83,7 +83,7 @@ class ListeuserController extends Controller
         $auto->list_actp = $request->list_actp;
 
         $auto->suivi_actc = $request->suivi_actc;
-        $auto->list_actc_eff = $request->list_actc_eff;
+        /*--$auto->list_actc_eff = $request->list_actc_eff;--*/
         $auto->list_actc = $request->list_actc;
 
         $auto->fiche_am = $request->fiche_am;

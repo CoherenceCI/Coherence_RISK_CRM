@@ -79,6 +79,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/traitement Poste', [PosteController::class, 'index_add_poste_traitement'])->name('index_add_poste_traitement');
         Route::post('/traitement modif Poste', [PosteController::class, 'index_modif_poste_traitement'])->name('index_modif_poste_traitement');
         Route::get('/get post user', [PosteController::class, '/get_post_user'])->name('get_post_user');
+        Route::get('/poste_delete/{id}', [PosteController::class, 'poste_delete'])->name('poste_delete');
     /*----------------------------------------------------------------------------------------------------------------------------*/
 
     /*--Risque---------------------------------------------------------------------------------------------------------------------*/

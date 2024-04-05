@@ -522,6 +522,27 @@
         </div>
     </div>
 </div>
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+            $('.modal').modal('hide');
+            $(`#modalt`).modal('hide');
+            $(`#modalt`).modal('show');
+
+            // Si toutes les validations passent, soumettre le formulaire
+            this.submit();
+        });
+    </script>
+    <script>
+        document.getElementById("form_click").addEventListener("click", function(event) {
+
+            $('.modal').modal('hide');
+            $(`#modalt`).modal('hide');
+            $(`#modalt`).modal('show');
+
+        });
+    </script>
 
         /*--<div class="modal fade" tabindex="-1" id="modalAlert2" aria-modal="true" style="position: fixed;" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog" role="document">
@@ -570,7 +591,7 @@
                         <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close"><em class="icon ni ni-cross"></em></a>
                     </div>
                     <div class="modal-body">
-                        <form class="nk-block" id="processus-form" method="post" action="{{ route('index_add_poste_traitement') }}">
+                        <form class="nk-block" id="form" method="post" action="{{ route('index_add_poste_traitement') }}">
                             @csrf
                             <div class="row g-4 mb-4" id="poste-container">
                                 <div class="col-lg-12">
@@ -587,10 +608,10 @@
                             <div class="row g-gs">
                                 <div class="col-lg-6">
                                     <div class="form-group text-center">
-                                        <button type="button" class="btn btn-lg btn-primary btn-dim" id="ajouter-poste">
+                                        <a class="btn btn-lg btn-primary btn-dim" id="ajouter-poste">
                                             <em class="ni ni-plus me-2"></em>
                                             <em>Ajouter</em>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

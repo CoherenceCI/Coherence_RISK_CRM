@@ -953,21 +953,5 @@
     });
 </script>
 
-    <script>
-        document.getElementById("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Empêche la soumission par défaut du formulaire
-
-            $('.modal').modal('hide');
-            $(`#modalt`).modal('hide');
-            $(`#modalt`).modal('show');
-
-            // Si toutes les validations passent, soumettre le formulaire
-            this.submit();
-        });
-
-    </script>
-
-
-
 @endsection
 

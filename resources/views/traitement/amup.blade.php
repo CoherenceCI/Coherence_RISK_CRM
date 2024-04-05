@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="nk-modal-action">
-                                <a href="/am_update/{{ $am->id }}" class="btn btn-lg btn-mw btn-success me-2">
+                                <a id="form_click" href="/am_update/{{ $am->id }}" class="btn btn-lg btn-mw btn-success me-2">
                                     oui
                                 </a>
                                 <a href="#" class="btn btn-lg btn-mw btn-danger"data-bs-dismiss="modal">
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
                             <div class="nk-modal-action">
-                                <a href="/am_delete/{{ $am->id }}" class="btn btn-lg btn-mw btn-success me-2">
+                                <a id="form_click" href="/am_delete/{{ $am->id }}" class="btn btn-lg btn-mw btn-success me-2">
                                     oui
                                 </a>
                                 <a href="#" class="btn btn-lg btn-mw btn-danger"data-bs-dismiss="modal">

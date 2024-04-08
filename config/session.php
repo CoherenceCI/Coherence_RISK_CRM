@@ -31,13 +31,13 @@ return [
     |
     */
 
-    'csrf_token_lifetime' => 2, // Durée de vie du jeton CSRF en minutes
+    'csrf_token_lifetime' => 200, // Durée de vie du jeton CSRF en minutes
 
-    'lifetime' => env('SESSION_LIFETIME', 2), // Durée de vie de la session en minutes
+    'lifetime' => env('SESSION_LIFETIME', 200), // Durée de vie de la session en minutes
 
     'expire_on_close' => true, // Session n'expire pas à la fermeture du navigateur
 
-    'timeout' => 2, // Délai d'expiration de la session après inactivité (en minutes)
+    'timeout' => 200, // Délai d'expiration de la session après inactivité (en minutes)
 
     /*
     |--------------------------------------------------------------------------

@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         $user = User::create([
             'name' => 'David Kouachi',
             'email' => 'david@gmail.com',
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('David001'),
             'matricule' => 'C1223456',
             'tel' => '0585782723',
             'poste_id' => $poste1->id,
@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
         $user2 = User::create([
             'name' => 'David Chris',
             'email' => 'chris@gmail.com',
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('Chris001'),
             'matricule' => 'C12334490',
             'tel' => '0585782725',
             'poste_id' => $poste2->id,
@@ -127,7 +127,7 @@ class DatabaseSeeder extends Seeder
         $user3 = User::create([
             'name' => 'David Emmanuel',
             'email' => 'emmanuel@gmail.com',
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('Emman001'),
             'matricule' => 'C12345491',
             'tel' => '0585782720',
             'poste_id' => $poste3->id,
@@ -177,7 +177,7 @@ class DatabaseSeeder extends Seeder
         $user4 = User::create([
             'name' => 'Chris Emmanuel',
             'email' => 'chris01@gmail.com',
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('Chris01001'),
             'matricule' => 'C1234951',
             'tel' => '0585782520',
             'poste_id' => $poste4->id,
@@ -227,7 +227,7 @@ class DatabaseSeeder extends Seeder
         $user5 = User::create([
             'name' => 'Chris Kouachi',
             'email' => 'chrisK@gmail.com',
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('ChrisK001'),
             'matricule' => 'C1234904',
             'tel' => '0555782520',
             'poste_id' => $poste5->id,

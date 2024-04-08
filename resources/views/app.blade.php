@@ -582,7 +582,7 @@
             }
             // Utilise setTimeout() pour déclencher la fonction après un délai de 2 minutes
             document.addEventListener("DOMContentLoaded", function() {
-                setTimeout(afficherModalApresDelai, 120000); // 120000 millisecondes = 2 minutes
+                setTimeout(afficherModalApresDelai, 900000); // 120000 millisecondes = 2 minutes
             });
         </script>
 

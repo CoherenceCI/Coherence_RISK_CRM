@@ -367,7 +367,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="personal">
-                        <form id="form" class="row gy-4" method="post" action="{{ route('mdp_update') }}" >
+                        <form id="form_password" class="row gy-4" method="post" action="{{ route('mdp_update') }}" >
                             @csrf
                             <div class="col-lg-12">
                                 <div class="form-group">
@@ -408,6 +408,56 @@
         </div>
     </div>
 </div>
+
+<script>
+        document.getElementById("form_password").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+            var password = document.getElementById("password").value;
+            var password2 = document.getElementById("password2").value;
+
+            if (password !== password2){
+                toastr.error("Mot de passe incorrect.");
+                return false;
+            }
+
+            if (!verifierMotDePasse(password) || !verifierMotDePasse(password2)) {
+                // Empêcher la soumission du formulaire si le mot de passe est invalide
+                event.preventDefault();
+                // Afficher un message d'erreur
+                toastr.warning("Le mot de passe doit comporter au moins 8 caractères, une lettre majuscule, une lettre minuscule et un chiffre.");
+                return false;
+            }
+
+            $('.modal').modal('hide');
+            $(`#modalt`).modal('hide');
+            $(`#modalt`).modal('show');
+
+            // Si toutes les validations passent, soumettre le formulaire
+            this.submit();
+
+            function verifierMotDePasse(motDePasse) {
+                // Vérification de la longueur
+                if (motDePasse.length < 8) {
+                    return false;
+                }
+                // Vérification s'il contient au moins une lettre majuscule
+                if (!/[A-Z]/.test(motDePasse)) {
+                    return false;
+                }
+                // Vérification s'il contient au moins une lettre minuscule
+                if (!/[a-z]/.test(motDePasse)) {
+                    return false;
+                }
+                // Vérification s'il contient au moins un chiffre
+                if (!/\d/.test(motDePasse)) {
+                    return false;
+                }
+                // Si toutes les conditions sont satisfaites, le mot de passe est valide
+                return true;
+            }
+        });
+    </script>
 
 <script>
     var inputElement = document.getElementById('tel');
@@ -511,7 +561,6 @@
         }
     });
 </script>
-
 
 
 @endsection

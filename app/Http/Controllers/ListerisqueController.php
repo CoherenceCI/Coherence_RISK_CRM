@@ -487,7 +487,17 @@ class ListerisqueController extends Controller
 
         $delete3 = Cause::where('risque_id', '=', $id)->delete();
 
-        $delete4 = Pdf_file::where('risque_id', '=', $id)->delete();
+        $delete4 = Pdf_file::where('risque_id', $id)->first();
+
+        if ($delete4) {
+            $pdfPathname = $delete4->pdf_chemin;
+
+            if (file_exists($pdfPathname)) {
+                unlink($pdfPathname);
+            }
+            // Supprimer d'abord l'enregistrement de pdf_files
+            $del = Pdf_file::where('risque_id', $id)->delete();
+        }
 
         $delete5 = Risque::where('id', '=', $id)->delete();
 

@@ -506,7 +506,7 @@
         </div>
     </div>
 
-<div class="modal fade" tabindex="-1" id="modalt" aria-modal="true" role="dialog">
+<div class="modal fade" tabindex="-1" id="modalt" aria-modal="true" style="position: fixed;" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body modal-body-lg text-center">
@@ -544,7 +544,7 @@
         });
     </script>
 
-        /*--<div class="modal fade" tabindex="-1" id="modalAlert2" aria-modal="true" style="position: fixed;" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal fade" tabindex="-1" id="modalAlert2" aria-modal="true" style="position: fixed;" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body modal-body-lg text-center">
@@ -567,21 +567,24 @@
         </div>
 
         <script>
-            // Fonction pour rafraîchir la page
-            function refreshPage() {
-                $('#modalAlert2').modal('show');
-            }
-
-            // Rafraîchir la page toutes les 5 minutes (300 000 millisecondes)
-            setInterval(refreshPage, 600000);
-        </script>
-
-        <script>
             document.getElementById('logoutBtn').addEventListener('click', function(event) {
                 event.preventDefault(); // Pour éviter le comportement par défaut du lien
                 window.location.reload();
             });
-        </script>--*/
+        </script>
+
+        <script>
+            // Cette fonction affiche le modal après un délai de 2 minutes
+            function afficherModalApresDelai() {
+                $('.modal').modal('hide'); // Assurez-vous que les modaux précédents sont masqués
+                $('#modalAlert2').modal('show'); // Affiche le modal spécifié
+                // Vous pouvez également ajouter d'autres opérations à effectuer après l'affichage du modal ici
+            }
+            // Utilise setTimeout() pour déclencher la fonction après un délai de 2 minutes
+            document.addEventListener("DOMContentLoaded", function() {
+                setTimeout(afficherModalApresDelai, 120000); // 120000 millisecondes = 2 minutes
+            });
+        </script>
 
         <div class="modal fade zoom" tabindex="-1" id="modalPoste">
             <div class="modal-dialog modal-lg" role="document" style="width: 100%;">
@@ -628,7 +631,6 @@
                 </div>
             </div>
         </div>
-
 
         <script>
             document.getElementById('ajouter-poste').addEventListener('click', function(event) {
